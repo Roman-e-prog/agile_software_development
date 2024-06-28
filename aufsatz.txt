@@ -1,0 +1,187 @@
+Agile Software Development
+
+Das agile Softwaredevelopment hat einen iterativen Ansatz bei dem sich das Ziel mehrfach ändern kann.
+
+Das Wasserfallprinzip priorisiert die Zeit.
+
+Anforderungen des agilen Softwaredevelopments sind 
+- Qualität und Variabilität
+- stetigen Produktverbesserungen
+- präziese Anforderungen werden erst später definiert
+- der Kunde wird in den Prozess integriert
+- geringe Kosten für spätere Änderungen
+- wiederholender Entwicklungsprozess
+
+12 Prinzipien
+1) Oberstes prinzip ist die frühe und permanente Auslieferung der Software an den Kunden.
+2) Veränderte Anforderungen beim Entwickel werden unabhängig vom Zeitpunkt befürwortet, um dem Kunden einen Wettbewerbsvorteil zu verschaffen.
+3) Funktionsfähige Software muss in regelmäßigen und kurzen Zeitspannen an den Abnehmer ausgeliefert werden.
+4) Tägliche Zusammenarbeit von Fachexperten und Entwicklern
+5) Den Mitarbeitern werden stets die benötigten Resourcen zur Verfügung gestellt
+6) Informationen werden im direkten Gespräch ausgetauscht, damit sie allen Teammitgliedern effektiv und effizient zur Verfügung stehen.
+7) Die Funktionsfähigkeit der Software gilt als priorisiertes Fortschrittsmaß
+8) Arbeitstempo von Auftraggebern, Entwicklern und Benutzern sollte möglichst gleich sein.
+9) Hauptaugenmerk ständig auf dem Design und der technischen Exzellenz
+10) Die Einfachheit von Prozessen ist essentiell und zielführend.
+11) Durch selbstorganisierte Teams entstehen die besten Entwürfe, Anforderungen und Architekturen.
+12) Regelmäßiges Reflektieren des eigenen Verhaltens, dient dazu das Verhalten anzupassen.
+
+Leitsätze der Agilen Softwareentwicklung
+
+1) Der Schwerpunkt der Entwicklungsarbeit liegt bei den Mitwirkenden und deren Handlungen - erst danach kommen die Prozesse. Dadurch entsteht die notwendige Flexibilität.
+2) Das funktionsfähige produkt hat Vorrang gegenüber einer ausführlichen Dokumentation. Die Dokumentation wird auf das notwendigste reduziert.
+3) Die Zusammenarbeit mt dem Kunden steht im Vordergrund, sodass der Kunde intensiv in den Entwicklungsprozess mit eingebunden wird.
+4) Die Reaktion auf Kundenwünsche ist wichtiger als das Verfolgen des Plans. Insofern steht die Flexibilität im Vordergrund, sodass neue Ideen dem Projekt kurzfristig hinzugefügt werden können.
+
+Alle agilen Methoden basieren auf den Ansätzen des 'Lean thinking'. Diese legt den Fokus auf Werthaltigkeit, Wertströme, Qualität, Flussorientierung und dem Pull-Prizip.
+
+Das Pull-Prinzip ist ein Ansatz, bei dem die Teammitglieder Aufgaben aus einem gemeinsamen Backlog ziehen, sobald sie bereit sind eine neue Aufgabe zu übernehmen. Das heißt also das Gegenteil davon, dass Aufgaben blank zugeteilt werden(Push-Prinzip). Eigenverantwortung und Selbstorganisation stehen also hier im Vordergrund, da jedes Teammitglied selbst entscheidet, welche Aufgabe es als nächstes übernimmt. Dadurch wird auch kein Teammitglied überlastet, da man erste eine neue Aufgabe übernimmt, wenn man die Kapazitäten dafür frei hat.
+
+Für dieses Prinzip werden folgende Methoden herangezogen:
+
+1) Scrum - Eine einfache Struktur, bei dem eine Aufgabe in verschiedene Scrum-Teams unter der Hirarchie von Product Ownern durchgeführt wird. Abläufe des Teams finden koordiniert und täglich statt. Teambesprechungen finden täglich statt. Diese daily scrums werden von einem Scrum Master geführt, der insbesonder Probleme der mItarbeiter aufnimmt und dafür Sorge trägt, dass sie die schnellstmöglich lösen können. Der Project Owner muss nicht zwangsläufig anwesend sein und nimmt bei Anwesenheit eine beobachtende Rolle ein. Maßgeblich werden hier der Bearbeitungsstand abgeglichen und Mitarbeiter geben hier an, wenn sie Schwierigkeiten bei der Umsetzung einer Aufgabe haben, beziehungsweise nicht weiterkommen, sodass andere, die ggf. bereits Erfahrungen mit der Umsetzung solcher Aufgaben besitzen helfen können. Was allerdings nicht während des daily scrums passiert, sondern im Anschluss unter den Teammitgliedern besprochen wird (Parking lot). Außerdem wird besprochen, was an diesem Tag ansteht. Alle Teammitglieder müssen anwesend sein.
+
+2) Kanban - Ähnlich wie scrum, aber hier sind die Rollen des Teams nicht fest zugeordnet, sondern die Verantwortlichkeiten gehen ineinander über. Keine täglichen Meetings sondern situative Besprechungen.
+
+3) Extreme Programming - Intensiveres Scrum, das die Flexibilität der Methode maximiert. Die Sprints finden in kürzeren Zeiträumen statt. Im Gegenteil zu scrum ist hier gewünscht Änderungen in den Sprints zu vollziehen.
+
+Rollen und Begriffe im Scrum
+
+Product Owner - Ist für die Wertsteigerung des Produktes verantwortlich. 
+
+Scrum Master - Verantwortlich dafür, dass Regeln und Abläufe im Scrum eingehalten werden. Außerdem unterstützt er das Team dabei Scrum korrekt zu verwenden.
+
+Backlog - Gesamtheit der Aufgaben.
+
+Sprint - Dient der Bearbeitung einer Aufgabe aus dem Backlog (i.d.R 2-4 Wochen)
+
+Daily Scrum - Tägliches Meeting(ca. 15 Minuten) 
+
+Sprint Review - Rückblick auf den vergangenen Sprint. Vorstellung und Ergebnisee an die Stakeholder, eventuelle Anpassung des Backlogs.
+
+Sprint Goal - Ziel des Aufgabenblocks
+
+Sprint Retrospective - Dabei wird der nächste Sprint geplant
+
+Scrum Framework
+
+Product Backlog ==> Sprint Planning ==> Sprint Backlog ==> Srum Team (Working on the tasks) ==> Sprint Review ==> Sprint Retrospective
+
+Srum Dashboard
+
+Was wir bearbeitet?
+Was ist in Bearbeitung?
+Was ist fertigestellt und getestet?
+
+ProductIncrement - Projektfortschritt
+
+Wann wird agiles Softwaredevelopment angewendet?
+
+Wenn nur ein bestehendes Projekt überarbeitet werden soll, ist der Einstz fraglich.
+Lohnt sich erst bei komplexeren Aufgaben.
+Je mehr Personal benötigt wird um die Aufgabe zu erfüllen, können täglich wiederkehrende Teambesprechungen zu hohen Kosten führen.
+Vorteil ist das der Auftraggeber direkt an den daily scrums teilnehmen kann und sich somit direkt in den Produktionsprozess einschalten kann.
+Abgerechnet wird nach Aufwand oder agilem Festpreis.
+
+Der agile Festpreis
+
+Erst Treffem des Auftraggebers mit dem Projektteam bei dem die Anforderungen und Ziele besprochen werden. Daraufffolgend eine Testphase aus 3 - 5 Sprints, nach dem dem Kunden ein minimal funktionierendes Produkt vorgestellt wird. Hier wird der Festpreis bzw. die Risikoverteilung besprochen.
+
+Vorteile der agilen Softwareentwicklung
+- Erhöhte Aufnahmebereitschafft von Veränderungen.
+- Rückstände können im nächsten Sprint priorisiert werden.
+- Verbesserte Kundenbeziehung
+- Weniger Fehlentscheidungen weil der Kunde direkt einbezogen ist.
+- Reflektion & Optimierung
+
+
+Nachteile bzw. Risiken
+- ggf Ungenauhigkeit durch permanete Veränderungen
+- Von den Mitarbeitern wird flexibles Denken, gutes Kommunikationsmanagement sowie hohes eigenengagement erwartet
+- fehlende Dokumentation
+- Abweichungen vom ursprünglichen Plan, wenn die Kundenwünsche zu oft wechseln, könnte dies vielleicht die grundsätzliche Verfahrensweise in Frage stellen.
+
+Kriterien für die Auswahl
+
+Agile Erfahrungswerte - Wie komplex ist das Projekt und das Unternehmen?
+Planbarkeit - Wie planbar ist das Produkt? 
+Wie hoch ist das Risiko von Veränderungen
+Komplexität - Welches Volumen nimmt das Projekt ein?
+
+Agiles Project Managment
+
+Ist der Weg ein Projekt in mehrere Sprints aufzuteilen. Es erlaubt dem Team, Segmente des Projektes, die fertig sind, zu releasen. Aufgrund der Selbstverantwortlichkeit des Teams benötigt es keinen Projektleiter.
+
+Lifcycle - Product Backlog ==> Sprint Backlog ==> Planung ==> Design ==> Release ==> Testing ==> Finales Produkt
+
+Darin enthalten der CI/CD lifecycle Plan ==> Code ==> Build ==> Test ==> Release ==> Deploy ==> Operate ==> Monitor
+
+Kanban Framework
+
+Wird benutzt um agiles Development zu implementieren. Benötigt eine real-time Kommunikation. Die Work items werden auf einem Kanban-Board fetgehalten, damit jeder up-to-date ist.
+
+Hybrid Framework
+
+Kombination aus agilem und nicht agilen Methoden. Kann das Produkt in Stufen abliefern. Planung nach dem Wasserfallprinzip, während das Abliefern und Ausführen mit agilen Methoden durchgeführt wird. 
+
+Lean Framework
+
+Maximiert den Kundennutzen mit geringstmöglichen Resourcen. Fokussiert sich auf die unterschiedlichen Technologien. Somit reagiert man auf die Kundenwünsche und Notwendigkeiten.
+
+User Stories
+
+Um überhaupt die Kundenwünsche zu verstehen und zu visualisieren, sollten User Stories kreiert werden. Beschreibt in einfachen Worten das Projekt aus der Endnutzerperspektive. Was kann dem user mehr Nutzen bringen? Dabei muss beachtet werden, welche Rolle der user hat, intern oder extern.
+    Außerdem legen sie die Maßgaben für das Anforderungsmangement und die Initiativen fest. 
+    Independent - User stories sollten unabhängig voneinander sein um seperat entwickelt und abgeliefert werden zu können. 
+    Negotiable - Sie sollten verhandelbar und diskutierbar sein.
+    Valuable - Sie müssen Wert für den Autraggeber und seine Nutzer bringen.
+    Estimable - Müssen in Aufgaben unterteilbar und einschätzbar sein
+    Small - Sollten vom Developer in 40 Stunden zu erledigen sein
+    Testable - Sollten Kriterien enthalten, um zu testen ob sie die Wünsche des Nutzers erfüllen können.
+
+How to write User Stories?
+
+As a [role] I [want to], [so that]
+
+Die 3 c der User Stories
+
+cond - Geschriebene Beschreibung für der User Stories für die Planung
+conversation - Diskussion zwischen Teammitgliedern, Nutzern, product owner bildet gemeinsames Verständnis.
+confirmation - Representiert Bedingungen die erfüllt werden müssen und alle dafür benötigten Resourcen.
+
+Lifecycle der User Stories - Pending ==> ToDo ==> Discussion ==> Developing ==> Confirming ==> Finished
+
+Pending    - Basic User Story nach der Diskussion mit den Nutzern und dem Projektteam. Dient als Erinnerung für 
+             die nächste Diskussion. 
+ToDo       - Vergabe der Aufgabe und Einbindung in den Sprint
+Discussion - Die Nutzer beurteilen die Akzeptanz und Kriterien. Dem Endnutzer wird eine Vorschau gezeigt.
+Developing - Nach der Diskussion erfüllt das Team die Nutzeranforderungen.
+Confirming - Der Nutzer beurteilt die Korrektheit der Story. Sie wird getestet und nach den Akzeptanzkriterien ausgeweitet.
+
+User Story Map
+
+Das Mapping representiert die User Stories und legt fest wie sie mit der Systemfunktionalität, dem Backlog, der Planung, der Veröffentlichung und dem Kundennutzen zu vereinbaren sind. Das User story Mapping hilft zu visualisieren welche Priorität welche Aufgabe hat. Def Focus liegt auf der ux. Roadblocks sind highlighted. Garantiert Einigkeit im Team. Ist Fokussiert auf permanente Veränderbarkeit.
+
+Auf der x-achse wird dargestellt nach welcher Priorität sie abzuarbeiten sind.
+Auf der y-achse befinden sich die einzelnen Schritte zur Vollendung
+
+Bsp User Story Map
+Activities
+
+Login               Manage Account                  Generate Statement              Transfer Money
+------------------------------------------------------------------------------------------------------
+Aufgaben
+
+Goto login page     Goto Accountpage                Generate Statement              Go to transferpage
+-------------------------------------------------------------------------------------------------------
+Unteraufgaben
+
+Enter Credentials   Select Account                  Select Account                  Select Benefactory
+Reset Password      Display Accoun Details          Select Statement period         Add Benefactory
+
+
+
+
+
+
+
