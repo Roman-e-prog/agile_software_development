@@ -130,7 +130,7 @@ Maximiert den Kundennutzen mit geringstmöglichen Resourcen. Fokussiert sich auf
 
 User Stories
 
-Um überhaupt die Kundenwünsche zu verstehen und zu visualisieren, sollten User Stories kreiert werden. Beschreibt in einfachen Worten das Projekt aus der Endnutzerperspektive. Was kann dem user mehr Nutzen bringen? Dabei muss beachtet werden, welche Rolle der user hat, intern oder extern.
+Um überhaupt die Kundenwünsche zu verstehen und zu visualisieren, sollten User Stories kreiert werden, die aus einem Modell heraus entstehen, sihe ddd.txt. Beschreibt in einfachen Worten das Projekt aus der Endnutzerperspektive. Was kann dem user mehr Nutzen bringen? Dabei muss beachtet werden, welche Rolle der user hat, intern oder extern. 
     Außerdem legen sie die Maßgaben für das Anforderungsmangement und die Initiativen fest. 
     Independent - User stories sollten unabhängig voneinander sein um seperat entwickelt und abgeliefert werden zu können. 
     Negotiable - Sie sollten verhandelbar und diskutierbar sein.
