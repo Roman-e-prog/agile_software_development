@@ -1,0 +1,243 @@
+Domain Driven Design
+
+DDD beziehts ich auf die Enticklung einer Fachbezogenen Softwarearchitektur:
+Die Domain bezeichent hier die Fachlichkeit, beziehungsweise den Fachbereich.
+Domain Experts sind die Fachleute für die jeweilige Domain, das heißt Autraggeber bzw. Mitarbeiter des jeweiligen Fachbereichs oder Unternehmensberater, Manager, die später mit der Software arbeiten sollen oder für die die Software ein 
+bestimmtes Problem lösen soll. 
+Erfasst wid deren Bedarf in einem Domänenmodell.
+
+Event Storming
+Kann als Startpunkt des Vorgangs eingesetzt werden.
+Dafür Notwendig:
+    Mitarbeiter des Fachbereichs
+    Developerteams möglichst in gleicher Anzahl und nicht mehr als 15. 8 -10 bilden  einen sogenannten Sweet spot
+
+In einem Workshop werden die Events aus der Fachlichkeit erarbeitet. Ziel ist es ein gemeinsames Verständnis für den Fachbereich zu erarbeiten, sowie eine gemeinsame für alle Beteiligten verständliche Sprache zu entwickeln. (Ubiquitious Language)
+
+Die Events werden auf einem langen Papierwallet angepinnt mit Post-it Zetteln.
+
+Das Papierwallet representiert eine Timeline, die den Prozessablauf in der Domäne beschreibt.
+
+Die Events werden in der passiv Form geschrieben auf orangen Post-it Zetteln. 
+
+Folgendes Modell wird Erfasst
+
+Domain Event ---aktiviert---> Policy---issues---> Command
+   ^                                                |
+   |                                                |
+   Produziert ein                                   |
+   |                                                |
+   |                                                |
+   |                                                |                                                  
+    <------------------------- Externes System<-----
+   |                                                |
+   Resultiert in                                    Entscheidet
+   |                                                |
+   ------>Query Model/Information<---Beobachtet----Akteuer
+
+   Das Event aktivierte eine Berechnung, die zu einem Kommando führt. Dieses Kommando wird duch ein Externes System beeinflusst, das wiederum zu einem Event führt, das in einer Abfrage von Information resultiert, die ein Modell abfragt. Der Akteur beobachtet die Abfrage, was wiederum zu einem Kommando führt.
+
+   Der Akteur wird mit gelben Zetteln erfasst. Gibt es weiteren Klärungsbedarf zu einem Event, wird dieser in einem Hotspot erfasst(Pinker Zettel).
+   Die Boundaries werden mit Klebestreifen dargestellt, Opportunities mit grünen Post-it Zetteln, votes mit blauen Zetteln.
+
+   Der Einstieg sollte allen Beteteiligten leicht fallen, sodass nicht von Anfang an auf perfekte Formulierung oder Beschreibung gepocht wird. Zunächst sind die Events in der Domäne die einzig verfügbaren Bausteine, von Ihnen aus wird fortschreitend das Abbild der Timeline ausgearbeitet. Es gibt dabei einen Moderator, der die einzelnen Tools und Bausteine zur Verfügung stellt.
+
+   Big Picture
+   Die Domain Experts schreiben events auf Zettel und die Developer müssen diese anpinnen und in die richtige Reihenfolge bringen. Dabei sind die Experts wieder entscheident und korrigieren die Entwickler falls notwendig. Die Entwickler können auch Fragen stellen, falls etwas unklar sein sollte. Das heißt, es findet eine offnene Diskussion statt, es werden Fragen gestellt und Verbesserungsvorschläge erarbeitet. Muss etwas genauer erforscht werden wird dies in einem Hotspot erfasst.
+   Das Gesamtbild, dass sich daraus ergibt, sollte so etwas wie ein Initialstate sein, der durch die Akteure und Ihre Commands verändert wird. Commands können von verschiedenen Akteuren aus unterschiedlichen Bewegründen heraus gegeben werden. Der Command eines Akteurs kann wiederum Einfluss auf einen Command eines anderen Akteurs ausüben. Durch die Diskussion ergibt sich ggf. das einige Events unnötig werden oder aus falschen Annahmen entstanden sind.
+
+   Ich vergleiche das mit einem Statemanagement system:
+   InitialState--->action(command, bsp. Open Warenwirtschaft)---->reducer(Event)----->Store(veränderter Initalstate)
+
+   Oder: commands---->DomainEvent---->Evenhandler---->State---->Commandhandler---->Command
+
+   Zum Treffen von Entscheidungen werden Daten benötigt, die in Read Models dargestellt werden. Der Fokus wird hierbei nur auf die Verwendung der Daten, nicht auf deren Speicherung gelegt. Es werden also keine Tabellen oder Verknüpfungen gebildet. Es ergeben sich Erkenntnisse über Struktur und Relevanz der Daten, die Auswirkungen auf die Lösungsarchitektur haben. Aus diesen Information lässt sich eine "Event-Driven Archicture" ableiten. Man erhält ein ganzheitliches Bild, das für die spätere Anfertigung eine Models benötigt wird. 
+   Policies bilden hierbei automatisierbare oder regelbasierte Entscheidungen, sodass kein Akteur benötigt wird. Am Ende des Workshops müssen allen Events Commands oder Policies zugeordnet, die hierfür benötigten Daten erschlossen und die beteiligten Akteure benannt worden sein.
+   Teilprozesse sind identifiziert, in zeitliche Abfolge gebracht und ihre Abhängigkeiten untereinander definiert. Daraus ergeben sich die Begrenzungen der einzelnen Prozesse (Bounded Context).
+
+   Process Modelling
+
+   Die einzelnen Prozesse werden hierbei betrachtet, verfeinert und weitere Teilprozesse erarbeitet. Die einzelnen Bounded Contexts bekommen Namen. Kernprozesse(Core Domains) des Geschäftsmodells werden von untergeordneten Prozessen(Subdomains) separiert.
+
+   Software Modelling
+   Die Bounded Contexts werden aufgelöst und die Events und Commands bezüglich Ihrer Benenennung gruppiert, die userstory sollte jetz eingeleitet werden. Nützliche Hinweise und Beispielformulare auf https://github.com/ddd-crew/
+
+   Domain Driven Design
+„For most software projects, the primary focus should be on the domain and domain logic“,
+
+Ein Modell kann niemals die gesamte Domäne abbilden. Es ist immer eine Abstraktion und das ist auch das Ziel von Modellierung. Es geht darum, die wichtigsten Aspekte aufzunehmen und die unwichtigen wegzulassen.
+Ziel von Domain Driven Design ist es, die Verwendung unterschiedlicher Begriffe komplett zu unterbinden, in dem bewusst darauf geachtet wird, dass alle dieselbe Sprache sprechen.( Ubiquitous Language)
+
+Beim Tactial Design geht es darum, wie ein konkretes Domänenmodell gefunden, aufgebaut und implementiert werden sollte. Dabei gibt es die Bausteine Services, Aggregates, Entities, Value Objects, Repositories und Factories.
+Das Strategic Design betrachtet eine größere Ebene, nämlich den Fall dass die umzusetzende Domäne zu groß ist, um in einem einzigen Modell sinnvoll abgebildet zu werden. Das Domänenmodell muss dann aufgeteilt werden. Wie das gelingen kann, ohne die Vorteile von DDD zu verlieren und wie die verschiedenen Teilmodelle miteinander kommunizieren können, ist Teil der Betrachtung von Strategic Design.
+
+Tatsächlich kann man feststellen, dass viele der Prinzipien aus dem Strategic Design auf Microservice-Architekturen übertragen werden können. Insbesondere das Konzept der Bounded Contexts hilft dabei, den richtigen Schnitt für Microservices zu finden, aber auch die anderen beschriebenen Patterns sind teilweise sinnvoll, um das Zusammenspiel der einzelnen Services festzulegen.
+
+Es ist nicht das Expertenwissen, auf das es ankommt. Es ist das, was die Entwickler darunter verstehen, was sich im Code widerspiegelt und in die Produktionsumgebung gebracht wird.
+
+
+
+
+
+Vocabulary
+
+Entity - Obejekte des Models, die nicht durch ihre Eigenschaften, sondern durch ihre Identität definiert werden.
+         Sie bekommen demnach eine Id 
+
+Value Objects - Werden allein durch ihre Eigenschaften definiert. Sie werden immutable definiert und sind somit wiederverwendbar
+
+Aggregates - Zusammenfassungen von Entitäten und Value Objects und deren Assoziationen. Eine entity wird als Zugriffspunkt definert alle anderen entitys sind nicht von außerhalb erreichbar.
+
+associations - Beziehungen zwischen zwei oder mehreren Entitys.
+
+services - Funktionalitäten, die die ein wichtiges Konzept der Fachlichkeit darstellen und konzeptionell zu mehreren Objekten gehören, werden als eigenständige services modelliert. Services sind stateless classes und können somit wiederverwendet werden. Sie besitzen keine assoziationen aber methoden, die den obect values und entitys übergeben werden die zur Abarbeitung der Funktionalität notwendig sind.
+
+domain events - Objekte, die komplexe und sich ggf. dynamisch ändernde Aktionen des Domänenmodells beschreiben, die ein oder mehrere Aktionen oder Änderungen in den Fachobjekten bewirken. Sie ermöglichen zudem die Modellierung verteilter Systeme. Die Subsysteme kommunizieren über domain events, smit wird das System wartbarer und skalierbarer.
+modules - teilen das Domanenmodell in fachliche Bestandteile. Sie nehmen genau eine wohldefinierte Aufgabe oder Einheit wahr und sind untereinander nur geringfügig verknüpft.
+
+factories - lagern die Erzeugung von Fachobjekten in Fabrik-objekte aus. Sinnvoll ist das dann, wenn die Erzeugung komplex ist und Beziehungen benötigt, die das Fachobjekt selbst nicht mehr benötigt oder die Erzeugung zur Laufzeit ausgetauscht werden soll. Fabriken werden üblicherweise durch erzeugende Entwurfsmuster wie abstrakte Fabrik, Fabrikmethode oder Erbauer umgesetzt.
+
+Repositories: In DDD, repositories are used to manage the persistence of aggregates. They act as a bridge between the domain and the infrastructure, ensuring that the domain logic remains clean and focused on business rules
+
+Infrastructure Layer: This layer contains all the technical details required to support the domain. It includes data access, messaging, and other services that are necessary for the application to function but are not part of the core business logic 
+
+Dependency Injection: To keep the domain layer independent of the infrastructure, dependency injection is often used. This allows you to inject infrastructure services into the domain layer without creating tight coupling
+
+Steps to Implement Domain-Driven Design
+Understand the Domain:
+Hear the Story: Engage with domain experts to understand the business domain and its requirements.
+Understand Terms: Identify and understand the key terms and concepts used in the domain.
+Extract Scenarios: Gather scenarios and use cases that describe how the system should behave.
+
+Define Bounded Contexts:
+Identify Bounded Contexts: Define the boundaries within which specific parts of the domain model apply.
+Context Mapping: Create context maps to visualize the relationships between different bounded contexts.
+
+Model the Domain:
+Model Concepts: Create domain models that represent the key concepts and their relationships.
+Define Entities and Value Objects: Identify entities and value objects that are central to the domain.
+
+Implement the Domain Model:
+Write Tests and Code: Implement the domain model using code and write tests to ensure its correctness.
+Use Aggregates: Group related entities and value objects into aggregates to maintain consistency.
+
+Integrate with Infrastructure:
+Connect to the Infrastructure: Integrate the domain model with the underlying infrastructure, such as databases and messaging systems.
+Implement Repositories: Use repositories to manage the persistence of domain entities.
+
+Refine and Iterate:
+Refine the Model: Continuously refine the domain model based on feedback and new insights.
+Iterate on the Design: Iterate on the design to improve its alignment with the business domain.
+
+
+  Example from the net:
+      Customer---Businesscase---Offer---Product
+  We break the story of the domain expert in smaller pieces to gain a directly knowledge about, what problems our software should solve. Then we select use cases and define the capabilities the system should have. This we write into a diagramm.
+  Example:
+          Find a product by criteria
+        /
+  Dealer
+        \
+          Offer the product to the customer and add aditional offers
+
+  The model is extracted from usecases and domain terms. It should be written in a simple form, because it must be validated by the domain expert and should only contain the important aspects of the domain, that will be programmed in our system. Afterwards we write a domain code, so a short example, that shows only the functionallity and is not connected to the database, so that it is easy to test and we write it in TDD. This gives the client a short overview, what he has to expect from our app and we can make changes belonging to what the client is telling us.
+
+Domain Prototype - at first we have to dive into the domain logic. Means we dive into the world of the people for which we build the software. And first when this Prototype is ready and accepted by the users of our software, then we decide how we solve this with our technologies. For understanding the user needs there are helpers: The Business Model Canvas, The Product Vision Board
+
+Core Domain - Is the motivation for the project. For that we must getting knowledge about what is essential for our client. And there we will lay our concentration on and try to build the best quality. In other parts of the software we can then perhaps use simpler ways or default software, based on what is technical resolvable and how our budget is. So we have to set ourselves priorities and decide whats the most important. So we might also plan by this, where we ourselves invest the most energy and where we drive a lower budget. But also we have to differate us from the competitors. We should keep the first model small.
+
+Generic Domain - In this we not have to get specialized knowledge about the Domain of our users, but they are still important for the functionallity.
+
+Example from the net:
+Developer: "What is the goal of the project?"                       Client: "We want o move into the cloud."
+Developer: "What benefits bring this for the customers?"            Client: "We don't know?"
+
+Bounded Context = module
+
+-------------------------------------------------------------------------------------
+                                                                                    |
+                                                                                    |
+      Model i. e code                               Ubiquitious Language            |
+                                                                                    |
+                                                                                    |
+                                                                                    |
+                                    Bounds                                          |
+                                                                                    |
+-------------------------------------------------------------------------------------                                 
+To build modules we decide which Domain functionallity is to handle in one module, but all models build the context of the project.
+
+Tactical Design
+
+After the model follows the tactical design which deals much more with the code that we write.
+Here comes the vocabulary of entities, object values and aggregates, who are collections of entities and value objects in the game. 
+In addition, there are two important restrictions concerning aggregates:
+
+An aggregate can be referenced from the outside through its root only. Objects outside of the aggregate may not reference any other entities inside the aggregate.
+The aggregate root is responsible for enforcing business invariants inside the aggregate, ensuring that the aggregate is always in a consistent state. 
+So also the decision is about the entity, it can be a local entity or an aggregate root. This decision belongs to the fact, if the entity is reachable from outside the aggregate, if it is it needs a gloabal id when not it is enough that it has a local id. And it is how I thought, Aggregates are collections in document based databases or tables in relational databases. The entities get there Ids and are documents or rows.
+
+Hier nochmal eine Notiz zu one-to-many und many-to-many database relationships. Das ist das was ich bereits gemcht habe nämlich die Id eines blogposts in der answertable zu speichern.
+
+Hier noche in Hinweis zu join in relationalen Datenbanken. Es gibt verschiedene Typen von join, wie Inner Join, left Join, full join, right join. Zu den einzelnen Typen:
+Example to inner Join:
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+SELECT 
+    fa.forumanswer_id,
+    fa.answer,
+    fq.question_text
+FROM 
+    forumanswers fa
+JOIN 
+    forumquestions fq
+ON 
+    fa.question_id = fq.question_id;
+import pool from "../db/dbConnect";
+
+export const getForumAnswersWithQuestions = () => {
+    pool.query(`
+        SELECT 
+            fa.forumanswer_id,
+            fa.answer,
+            fq.question_text
+        FROM 
+            forumanswers fa
+        JOIN 
+            forumquestions fq
+        ON 
+            fa.question_id = fq.question_id;
+    `, (err, res) => {
+        if (err) {
+            console.log(err.message);
+        } else {
+            console.log(res.rows);
+        }
+    });
+};
+Ich setze dann diese function in die index.js hinein und hole mir diese function immer wenn ich den Inhqalt brauche in die app:
+app.get('/forum-answers-with-questions', getForumAnswersWithQuestions);
+Als Erklärung:
+SQL Aliases
+In the SQL query, fa and fq are aliases for the forumanswers and forumquestions tables, respectively. These aliases make the query more readable and concise.
+SELECT
+  t1.column_name (AS) new_column_name, 
+  t2.column_name (AS) other_new_column_name,
+  SELECT employee.id, customer.id, employee_name, employee_department
+FROM employees
+INNER JOIN customer
+ON employee.id = customer.employee_id
+  ...
+FROM table1 (AS) t1
+JOIN table2 (AS) t2
+  ON t1.column_name = t2.column_name
+
+Alle spalten
+SELECT d.*, p.*
+FROM doctors AS d
+INNER JOIN patients AS p
+ON d.first_name = p.first_name;
+
+
+
